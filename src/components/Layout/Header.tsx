@@ -30,7 +30,6 @@ export const Header: React.FC = () => {
       css={{
         height: rhythm(2.5),
         top: 0,
-        backgroundColor: "white",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
