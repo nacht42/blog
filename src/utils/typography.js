@@ -3,25 +3,54 @@ import theme from "typography-theme-wordpress-2016";
 
 theme.baseFontSize = "18px";
 theme.headerFontFamily = [
-  "Open Sans",
+  "-apple-system",
+  "BlinkMacSystemFont",
+  "Segoe UI",
+  "Roboto",
+  "Ubuntu",
+  "Helvetica Neue",
+  "PingFang SC",
+  "Hiragino Sans GB",
   "Microsoft YaHei",
   "Source Han Sans SC",
-  "Noto Sans CJK SC",
+  "WenQuanYi Micro Hei",
   "sans-serif",
 ];
 theme.bodyFontFamily = [
-  "Merriweather",
-  "Georgia",
+  "-apple-system",
+  "BlinkMacSystemFont",
+  "Segoe UI",
+  "Roboto",
+  "Ubuntu",
+  "Helvetica Neue",
+  "PingFang SC",
+  "Hiragino Sans GB",
   "Microsoft YaHei",
   "Source Han Sans SC",
-  "Noto Sans CJK SC",
-  "serif",
+  "WenQuanYi Micro Hei",
+  "sans-serif",
 ];
 
 theme.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
+    },
+    h1: {
+      fontFamily: [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Ubuntu",
+        "Helvetica Neue",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Microsoft YaHei",
+        "Source Han Sans SC",
+        "WenQuanYi Micro Hei",
+        "sans-serif",
+      ].join(","),
     },
     a: {
       boxShadow: `none`,
