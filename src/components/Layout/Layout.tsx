@@ -1,17 +1,31 @@
-/** @jsx jsx */
 import * as React from "react";
-import { css, jsx } from "@emotion/core";
-
+import { Global } from "@emotion/core";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Container } from "./Container";
+import { useTheme } from "emotion-theming";
+import { theme } from "../../utils/theme";
 
 export const Layout = ({ children }) => {
+  const theme = useTheme<theme>();
   return (
-    <Container>
-      <Header />
-      {children}
-      <Footer />
-    </Container>
+    <>
+      <Global
+        styles={{
+          body: {
+            background: theme.colors.background,
+            color: theme.colors.body,
+          },
+          a: {
+            color: theme.colors.primary,
+          },
+        }}
+      />
+      <Container>
+        <Header />
+        {children}
+        <Footer />
+      </Container>
+    </>
   );
 };

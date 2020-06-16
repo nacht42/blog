@@ -4,6 +4,10 @@ import { css, jsx } from "@emotion/core";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { IoIosMoon } from "react-icons/io";
 import { rhythm } from "../../utils/typography";
+import { useTheme } from "emotion-theming";
+import { theme } from "../../utils/theme";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const query = graphql`
   {
@@ -25,6 +29,8 @@ type queryData = {
 
 export const Header: React.FC = () => {
   const data: queryData = useStaticQuery(query);
+  const { toggle } = useContext(ThemeContext);
+  const theme = useTheme<theme>();
   return (
     <header
       css={{
@@ -40,7 +46,7 @@ export const Header: React.FC = () => {
           marginTop: 0,
           marginBottom: 0,
           "&:hover": {
-            color: "#3333ee",
+            color: theme.colors.primary,
           },
         }}
       >
@@ -55,10 +61,11 @@ export const Header: React.FC = () => {
         </Link>
       </h3>
       <IoIosMoon
+        onClick={toggle}
         css={{
           fontSize: rhythm(1),
           "&:hover": {
-            color: "#3333ee",
+            color: theme.colors.primary,
           },
         }}
       />

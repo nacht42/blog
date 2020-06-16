@@ -54,7 +54,9 @@ theme.overrideThemeStyles = () => {
     },
     a: {
       boxShadow: `none`,
-      color: "#3333ee",
+    },
+    blockquote: {
+      color: "inherit",
     },
   };
 };
