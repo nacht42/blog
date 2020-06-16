@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import * as React from "react";
-import { jsx, css } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import { rhythm } from "../../utils/typography";
 
 export const Container: React.FC = ({ children }) => {
