@@ -1,6 +1,5 @@
 ---
 title: "在 香橙派4 中安装 ubuntu16.04, mongoDB, zsh, node"
-description: "hello,world!"
 date: "2020-08-30"
 ---
 ## 安装 ubuntu16.04 系统
