@@ -6,7 +6,7 @@ module.exports = {
       summary: `作为一个不喜欢写代码以及没有技术热情的人，我会在这里逼逼赖赖，灌水，写一些不负责任的东西。`,
     },
     description: `你好，我是 Nacht，这是我的博客，作为一个不喜欢写代码以及没有技术热情的人，我会在这里逼逼赖赖，灌水，写一些不负责任的东西。`,
-    siteUrl: `https://blog.nacht.io`,
+    siteUrl: `https://nacht.io`,
     social: {
       twitter: `nacht42`,
       github: `nacht42`,
