@@ -5,7 +5,7 @@ import { graphql, useStaticQuery, Link } from "gatsby";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
 import { rhythm } from "../../utils/typography";
 import { useTheme } from "emotion-theming";
-import { theme } from "../../utils/theme";
+import { Theme } from "../../utils/theme";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
@@ -30,7 +30,7 @@ type queryData = {
 export const Header: React.FC = () => {
   const data: queryData = useStaticQuery(query);
   const { toggle, isDarkTheme } = useContext(ThemeContext);
-  const theme = useTheme<theme>();
+  const theme = useTheme<Theme>();
   return (
     <header
       css={{
