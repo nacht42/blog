@@ -2,7 +2,7 @@
 import * as React from "react";
 import { css, jsx } from "@emotion/core";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { IoIosMoon } from "react-icons/io";
+import { IoIosMoon, IoIosSunny } from "react-icons/io";
 import { rhythm } from "../../utils/typography";
 import { useTheme } from "emotion-theming";
 import { theme } from "../../utils/theme";
@@ -29,7 +29,7 @@ type queryData = {
 
 export const Header: React.FC = () => {
   const data: queryData = useStaticQuery(query);
-  const { toggle } = useContext(ThemeContext);
+  const { toggle, isDarkTheme } = useContext(ThemeContext);
   const theme = useTheme<theme>();
   return (
     <header
@@ -60,15 +60,27 @@ export const Header: React.FC = () => {
           {data.site.siteMetadata.title}
         </Link>
       </h3>
-      <IoIosMoon
-        onClick={toggle}
-        css={{
-          fontSize: rhythm(1),
-          "&:hover": {
-            color: theme.colors.primary,
-          },
-        }}
-      />
+      {isDarkTheme === true ? (
+        <IoIosSunny
+          onClick={toggle}
+          css={{
+            fontSize: rhythm(1),
+            "&:hover": {
+              color: theme.colors.primary,
+            },
+          }}
+        />
+      ) : (
+        <IoIosMoon
+          onClick={toggle}
+          css={{
+            fontSize: rhythm(1),
+            "&:hover": {
+              color: theme.colors.primary,
+            },
+          }}
+        />
+      )}
     </header>
   );
 };

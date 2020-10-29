@@ -4,12 +4,14 @@ import { darkTheme, lightTheme } from "../utils/theme";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
 
 export const ThemeContext = React.createContext<{
+  isDarkTheme: boolean;
   toggle: () => void | undefined;
 }>({
+  isDarkTheme: false,
   toggle: undefined,
 });
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider: React.FC = ({ children }) => {
   let isDark = false;
   if (typeof window !== "undefined") {
     isDark = !!JSON.parse(localStorage.getItem("isDarkTheme"));
@@ -22,7 +24,7 @@ export const ThemeProvider = ({ children }) => {
 
   const theme = isDarkTheme ? darkTheme : lightTheme;
   return (
-    <ThemeContext.Provider value={{ toggle }}>
+    <ThemeContext.Provider value={{ toggle, isDarkTheme }}>
       <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
     </ThemeContext.Provider>
   );
